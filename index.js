@@ -7,7 +7,7 @@ const app = express();
 
 app.use(express.json());
 app.use(cors({
-     origin:["https://pay-tm-vksr.vercel.app/"],
+     origin:["https://pay-tm-vksr-vamshichis-projects.vercel.app/"],
      methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization']
 }));
