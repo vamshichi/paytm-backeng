@@ -120,8 +120,7 @@ router.get('/currentid',authMiddleware,async(req,res)=>{
     });
 
     res.json({
-        userId : user.userId,
-	username : user.username
+        userId : user.userId
     })
 })
 
