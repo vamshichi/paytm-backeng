@@ -114,16 +114,6 @@ router.put("/", authMiddleware, async (req, res) => {
     })
 })
 
-router.get('/username',authMiddleware,async(req,res)=>{
-    const users = await User.findOne({
-        userId: req.userId
-    });
-
-    res.json({
-        username: users.username
-    })
-})
-
 
 router.get('/currentid',authMiddleware,async(req,res)=>{
     const user = await Account.findOne({
