@@ -114,27 +114,26 @@ router.put("/", authMiddleware, async (req, res) => {
     })
 })
 
+router.get('/username',authMiddleware,async(req,res)=>{
+    const users = await User.findOne({
+        userId: req.userId
+    });
+
+    res.json({
+        username: users.username
+    })
+})
+
+
 router.get('/currentid',authMiddleware,async(req,res)=>{
     const user = await Account.findOne({
         userId: req.userId,
     });
 
     res.json({
-        userId : user.userId,
-	username : user.username
+        userId : user.user
     })
 })
-
-router.get('/username',authMiddleware,async(req,res)=>{
-    const user = await User.findOne({
-        userId: req.userId,
-    });
-
-    res.json({
-        username: user.username
-    })
-})
-
 
 
 router.get("/bulk", async (req, res) => {
